@@ -85,8 +85,8 @@ pnpm test          # 16 tests: store readers, provider wiring, export, injection
 pnpm build
 ```
 
-Requires a reachable DeepSeek Harness checkout for type-level integration — see
-[docs/dev-setup.md](docs/dev-setup.md).
+Framework packages come from npm — no harness checkout needed. See
+[docs/dev-setup.md](docs/dev-setup.md) for testing inside a live harness.
 
 ## License
 

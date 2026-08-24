@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/<you>/dsh-prime-bridge.git",
@@ -13,22 +15,39 @@
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "exports": {
-    ".": { "types": "./lib/types/index.d.ts", "default": "./lib/index.js" },
-    "./invariant": { "types": "./lib/types/invariant.d.ts", "default": "./lib/invariant.js" },
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./invariant": {
+      "types": "./lib/types/invariant.d.ts",
+      "default": "./lib/invariant.js"
+    },
     "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
-  "files": ["lib/index.js", "lib/invariant.js", "patches/okf-openwiki.patch.yml", "lib/types/**/*.d.ts"],
-  "dsh": { "bundle": { "patch": "./patches/okf-openwiki.patch.yml" } },
-  "scripts": { "build": "tsdown src/index.ts src/invariant.ts --format esm --dts --out-dir lib" },
+  "files": [
+    "lib/index.js",
+    "lib/invariant.js",
+    "patches/okf-openwiki.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./patches/okf-openwiki.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsdown src/index.ts src/invariant.ts --format esm --dts --out-dir lib"
+  },
   "peerDependencies": {
     "@deepseek-ai/cordis": ">=4.0.0-rc.7",
     "@deepseek-ai/dsh-invariants": ">=0.1.1-rc.2",
     "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:*",
-    "@deepseek-ai/dsh-invariants": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-invariants": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-skill": "^0.0.1-rc.1"
   }
 }
