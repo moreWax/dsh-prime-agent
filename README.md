@@ -54,6 +54,8 @@ dsh plugin --profile default add github:moreWax/dsh-prime-bridge
     verifiedOnly: false
 ```
 
+The offline optimizer ships too — see [`refine/`](refine/).
+
 See the [cookbook](cookbook/) for complete recipes:
 1. [Serve your knowledge base as agent skills](cookbook/01-knowledge-as-skills.md)
 2. [Inject durable memories safely](cookbook/02-memory-injection.md)

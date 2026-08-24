@@ -13,7 +13,7 @@ back into the catalog. This is the loop that makes agents better next week.
 5. verified pages appear in dsh's skill catalog                    (automatic)
 ```
 
-Step 1 is this plugin. Steps 2–4 are Prime-side. Step 5 is free.
+Step 1 is this plugin. Steps 2–4 ship in this repo's [`refine/`](../refine/) pipeline — no Prime-side tooling required.
 
 ## Enable export
 
