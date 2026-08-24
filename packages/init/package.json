@@ -1,0 +1,9 @@
+{
+  "name": "@morewax/dsh-prime-bridge-init",
+  "description": "Interactive prerequisite checkup + guided setup for the dsh prime bridge",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "dsh-prime-bridge": "./bin/dsh-prime-bridge.js" },
+  "files": ["bin/"]
+}

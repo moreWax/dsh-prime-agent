@@ -5,6 +5,13 @@ installed and booting (`dsh web`), plus optionally a
 [Prime Agent](https://github.com/prime-agent) install for memory features.
 Everything works without Prime — you just get the knowledge-serving half.
 
+## 0 · Don't have everything installed? One command checks:
+
+```sh
+npx @morewax/dsh-prime-bridge-init init
+# y/n prompts for each missing piece: harness, Prime Agent, wiki bundle, DSPy
+```
+
 ## 1 · Install the plugins
 
 ```sh
