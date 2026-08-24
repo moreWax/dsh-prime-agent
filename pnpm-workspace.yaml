@@ -2,8 +2,5 @@ packages:
   - packages/*
   - packages/init
   - packages/test-support/*
-  - packages/remote/*
-  - packages/fs/*
-  - packages/shell/*
 allowBuilds:
   esbuild: true
