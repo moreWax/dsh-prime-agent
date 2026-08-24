@@ -1,0 +1,26 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/dsh-prime-harness"
+    },
+    {
+      "path": "packages/dsh-okf-openwiki"
+    },
+    {
+      "path": "packages/remote/remote-transport"
+    },
+    {
+      "path": "packages/remote/transport-ssh"
+    },
+    {
+      "path": "packages/remote/transport-mosh"
+    },
+    {
+      "path": "packages/fs/fs-ssh"
+    },
+    {
+      "path": "packages/shell/bash-ssh"
+    }
+  ]
+}

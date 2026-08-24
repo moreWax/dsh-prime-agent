@@ -1,0 +1,20 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib/types",
+    "composite": true,
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../../../packages/remote/remote-transport"
+    },
+    {
+      "path": "../../../packages/remote/transport-ssh"
+    }
+  ]
+}

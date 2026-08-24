@@ -1,10 +1,9 @@
 /**
- * ctx.skills provider serving Prime Agent skills and OKF bundle pages into
- * dsh's model-facing skill catalog via the real registerProvider seam.
+ * ctx.skills provider serving Prime Agent skills into dsh's model-facing
+ * skill catalog. (OKF/OpenWiki pages are served by @morewax/dsh-okf-openwiki.)
  */
 import { readFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
-import { basename } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
 import type {
   SkillCandidate,
@@ -80,4 +79,3 @@ export function registerSkillProvider(
     },
   }))
 }
-void basename

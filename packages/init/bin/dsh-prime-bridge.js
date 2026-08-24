@@ -9,6 +9,7 @@ import { execSync, spawnSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import { createInterface } from 'node:readline/promises'
 
 const CHECKS = [
@@ -59,8 +60,8 @@ function scaffoldWiki() {
     '---', 'kind: skill', 'status: verified', 'description: Starter page from dsh-prime-bridge init', '---', '',
     '# Hello knowledge', 'Edit this page or add more — every kind-declaring page becomes an agent skill.', '',
   ].join('\n')
-  require('node:fs').mkdirSync(dir, { recursive: true })
-  require('node:fs').writeFileSync(join(dir, 'hello-knowledge.md'), page)
+  mkdirSync(dir, { recursive: true })
+  writeFileSync(join(dir, 'hello-knowledge.md'), page)
 }
 
 async function ask(rl, q) {

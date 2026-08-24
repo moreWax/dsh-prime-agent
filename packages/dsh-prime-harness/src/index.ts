@@ -1,8 +1,8 @@
 /**
  * @deepseek-ai/dsh-prime-harness
  *
- * Bridges Prime Agent's continual harness and an OKF/OpenWiki bundle into
- * DeepSeek Harness, entirely as plugins on native seams:
+ * Bridges Prime Agent's continual harness into DeepSeek Harness, entirely as
+ * plugins on native seams:
  *
  *  - ctx.skills.registerProvider → prime skills + OKF pages in the catalog
  *  - agent/pre-step → durable memory injection (session-reference contract)
@@ -40,4 +40,3 @@ export function apply(ctx: Context, config: PluginConfig = {}): void {
 
 export { registerSkillProvider, registerContextInjection, registerContextInjectionWith, registerTurnExport }
 export * from './store.js'
-export { name as invariantName, apply as installInvariant } from './invariant.js'
