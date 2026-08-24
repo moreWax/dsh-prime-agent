@@ -13,7 +13,7 @@ You need the Prime **session id** whose harness state you want surfaced
   name: '@your-scope/dsh-prime-harness'
   config:
     primeHome: ~/.prime/agent
-    sessionId: 01a03192-ac30-779c-b3eb-2d9bac64003b
+    sessionId: <prime-session-uuid>
     injectMemory: true          # this recipe's capability
     injectBudgetChars: 8000     # hard cap on rendered memory
 ```
