@@ -1,0 +1,23 @@
+{
+  "name": "@your-scope/dsh-prime-bridge-testkit",
+  "description": "Fixtures and verification suites for the prime bridge plugins",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": { ".": "./src/index.ts", "./src/*": "./src/*" },
+  "scripts": { "test": "vitest run" },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc.7",
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2"
+  },
+  "dependencies": {
+    "@your-scope/dsh-prime-harness": "workspace:*",
+    "@your-scope/dsh-okf-openwiki": "workspace:*"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "workspace:*",
+    "@deepseek-ai/dsh-skill": "workspace:*"
+  }
+}

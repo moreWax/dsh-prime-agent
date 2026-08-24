@@ -1,0 +1,12 @@
+# OKF/OpenWiki knowledge bundle: serves verified-first knowledge pages into
+# the model-facing skill catalog with provenance metadata.
+#
+# DSH_OKF_BUNDLES - colon-separated bundle roots, e.g.
+#   DSH_OKF_BUNDLES=/srv/wiki/core:/srv/wiki/team
+
+- id: okf-openwiki
+  name: '@deepseek-ai/dsh-okf-openwiki'
+  config:
+    bundles: !!js (process.env.DSH_OKF_BUNDLES || '').split(':').filter(Boolean)
+    rank: 550
+    verifiedOnly: false

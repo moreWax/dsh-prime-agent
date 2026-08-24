@@ -1,0 +1,35 @@
+{
+  "name": "@your-scope/dsh-prime-harness",
+  "description": "Prime Agent bridge for DeepSeek Harness: memory injection, skill serving, and turn export as native plugins",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": { "access": "public" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<you>/dsh-prime-bridge.git",
+    "directory": "packages/dsh-prime-harness"
+  },
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": { "types": "./lib/types/index.d.ts", "default": "./lib/index.js" },
+    "./invariant": { "types": "./lib/types/invariant.d.ts", "default": "./lib/invariant.js" },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib/index.js", "lib/invariant.js", "patches/prime-harness.patch.yml", "lib/types/**/*.d.ts"],
+  "dsh": { "bundle": { "patch": "./patches/prime-harness.patch.yml" } },
+  "scripts": { "build": "tsdown src/index.ts src/invariant.ts --format esm --dts --out-dir lib" },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc.7",
+    "@deepseek-ai/dsh-invariants": ">=0.1.1-rc.2",
+    "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "workspace:*",
+    "@deepseek-ai/dsh-invariants": "workspace:*",
+    "@deepseek-ai/dsh-skill": "workspace:*",
+    "@your-scope/testkit": "workspace:*"
+  }
+}

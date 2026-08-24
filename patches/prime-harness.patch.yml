@@ -1,0 +1,20 @@
+# The prime-harness bundle patch. Inserted after the mode bundles, so the
+# skill service this package's provider registers on already exists.
+#
+# Environment seams (all optional):
+#   PRIME_HOME              - Prime Agent home (default ~/.prime/agent)
+#   DSH_PRIME_OKF_BUNDLE    - OKF bundle root; empty string skips OKF serving
+#   DSH_PRIME_SESSION_ID    - prime session whose harness state is surfaced;
+#                             required for memory injection and turn export
+
+- insert:
+    - id: prime-harness
+      name: '@deepseek-ai/dsh-prime-harness'
+      config:
+        primeHome: !!js process.env.PRIME_HOME || ''
+        okfBundle: !!js process.env.DSH_PRIME_OKF_BUNDLE || ''
+        rank: 600
+        injectBudgetChars: 8000
+        serveSkills: true
+        injectMemory: true
+        exportTurns: true
