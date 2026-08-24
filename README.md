@@ -25,6 +25,8 @@
 | [`@morewax/dsh-okf-openwiki`](packages/dsh-okf-openwiki/) | Serves OKF/OpenWiki bundle pages as skills **with provenance** — trust tiers (`verified`/`unverified`) surface in metadata, with a `verifiedOnly` trust gate | ✅ |
 | [`prime-harness-testkit`](packages/test-support/prime-harness-testkit/) | Reusable fixtures + suites verifying every contract above (16 tests) | dev only |
 
+**New here?** Start with the [5-minute quick start](QUICKSTART.md), then browse the [cookbook](cookbook/).
+
 ## Install
 
 ```sh
