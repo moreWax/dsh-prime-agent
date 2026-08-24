@@ -15,7 +15,7 @@
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SkillRegistry from '@deepseek-ai/dsh-skill'
-import { apply as primeHarness, getRenderedMemory } from '@your-scope/dsh-prime-harness'
+import { apply as primeHarness, getRenderedMemory } from '@morewax/dsh-prime-harness'
 import { makePrimeHome } from '../src/fixtures.js'
 
 describe('prime-harness smoke (real registry)', () => {

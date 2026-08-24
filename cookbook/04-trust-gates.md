@@ -25,7 +25,7 @@ Personal profile — see everything, unverified marked:
 
 ```yaml
 - id: okf-openwiki
-  name: '@your-scope/dsh-okf-openwiki'
+  name: '@morewax/dsh-okf-openwiki'
   config:
     bundles: [/srv/wiki/team]
 ```
@@ -34,7 +34,7 @@ Production/CI agent — verified only:
 
 ```yaml
 - id: okf-openwiki
-  name: '@your-scope/dsh-okf-openwiki'
+  name: '@morewax/dsh-okf-openwiki'
   config:
     bundles: [/srv/wiki/team]
     verifiedOnly: true       # unverified pages vanish from the catalog entirely

@@ -1,5 +1,5 @@
 {
-  "name": "@your-scope/dsh-prime-harness",
+  "name": "@morewax/dsh-prime-harness",
   "description": "Prime Agent bridge for DeepSeek Harness: memory injection, skill serving, and turn export as native plugins",
   "version": "0.1.0",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<you>/dsh-prime-bridge.git",
+    "url": "git+https://github.com/moreWax/dsh-prime-bridge.git",
     "directory": "packages/dsh-prime-harness"
   },
   "main": "lib/index.mjs",

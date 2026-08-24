@@ -19,7 +19,7 @@ Step 1 is this plugin. Steps 2–4 are Prime-side. Step 5 is free.
 
 ```yaml
 - id: prime-harness
-  name: '@your-scope/dsh-prime-harness'
+  name: '@morewax/dsh-prime-harness'
   config:
     sessionId: <uuid>
     exportTurns: true

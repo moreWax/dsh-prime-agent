@@ -1,5 +1,5 @@
 {
-  "name": "@your-scope/dsh-okf-openwiki",
+  "name": "@morewax/dsh-okf-openwiki",
   "description": "OKF/OpenWiki knowledge plugin for DeepSeek Harness: bundle pages as skills with provenance metadata",
   "version": "0.1.0",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<you>/dsh-prime-bridge.git",
+    "url": "git+https://github.com/moreWax/dsh-prime-bridge.git",
     "directory": "packages/dsh-okf-openwiki"
   },
   "main": "lib/index.mjs",
@@ -49,6 +49,6 @@
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-invariants": "^0.0.1-rc.1",
     "@deepseek-ai/dsh-skill": "^0.0.1-rc.1",
-    "@your-scope/dsh-prime-bridge-testkit": "workspace:*"
+    "@morewax/dsh-prime-bridge-testkit": "workspace:*"
   }
 }

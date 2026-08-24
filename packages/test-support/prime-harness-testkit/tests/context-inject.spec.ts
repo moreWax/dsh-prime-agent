@@ -5,7 +5,7 @@ import {
   getRenderedMemory,
   PRIME_MEMORY_BUDGET_EXCEEDED,
   registerContextInjectionWith,
-} from '@your-scope/dsh-prime-harness'
+} from '@morewax/dsh-prime-harness'
 import { makePrimeHome, mountPrimeHarnessTestServices } from '../src/fixtures.js'
 
 /** Poll until fn() turns true (cordis dispatches listeners on its own scheduler). */

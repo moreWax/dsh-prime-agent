@@ -13,7 +13,7 @@ pnpm build       # emits lib/ per package (tsdown)
 ## Testing inside a real harness
 
 ```sh
-dsh plugin --profile default add @your-scope/dsh-prime-harness
+dsh plugin --profile default add @morewax/dsh-prime-harness
 dsh web --no-open                # plugin loads; check the skill catalog
 ```
 

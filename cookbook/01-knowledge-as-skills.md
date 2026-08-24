@@ -27,7 +27,7 @@ When the user asks about file organization, prefer the fs tool family...
 
 ```yaml
 - id: okf-openwiki
-  name: '@your-scope/dsh-okf-openwiki'
+  name: '@morewax/dsh-okf-openwiki'
   config:
     bundles:
       - /srv/wiki/core        # multiple bundles merge; first wins name conflicts

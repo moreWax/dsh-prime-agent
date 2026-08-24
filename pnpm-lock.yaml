@@ -35,7 +35,7 @@ importers:
       '@deepseek-ai/dsh-skill':
         specifier: ^0.0.1-rc.1
         version: 0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))(@deepseek-ai/dsh-llm@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-attachment@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-brand@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-brand@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))(@deepseek-ai/dsh-timeout@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))))(@deepseek-ai/dsh-scope@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))
-      '@your-scope/dsh-prime-bridge-testkit':
+      '@morewax/dsh-prime-bridge-testkit':
         specifier: workspace:*
         version: link:../test-support/prime-harness-testkit
 
@@ -57,10 +57,10 @@ importers:
 
   packages/test-support/prime-harness-testkit:
     dependencies:
-      '@your-scope/dsh-okf-openwiki':
+      '@morewax/dsh-okf-openwiki':
         specifier: workspace:*
         version: link:../../dsh-okf-openwiki
-      '@your-scope/dsh-prime-harness':
+      '@morewax/dsh-prime-harness':
         specifier: workspace:*
         version: link:../../dsh-prime-harness
     devDependencies:

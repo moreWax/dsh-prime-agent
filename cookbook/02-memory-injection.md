@@ -10,7 +10,7 @@ You need the Prime **session id** whose harness state you want surfaced
 
 ```yaml
 - id: prime-harness
-  name: '@your-scope/dsh-prime-harness'
+  name: '@morewax/dsh-prime-harness'
   config:
     primeHome: ~/.prime/agent
     sessionId: <prime-session-uuid>

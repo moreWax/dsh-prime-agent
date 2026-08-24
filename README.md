@@ -21,17 +21,17 @@
 
 | Package | What it does | Works standalone |
 |---|---|---|
-| [`@your-scope/dsh-prime-harness`](packages/dsh-prime-harness/) | Serves Prime skills into `ctx.skills`, injects Prime memories as durable context (session-reference contract: escaped, budgeted, fail-loud), exports turns to Prime's inbox for refine | ✅ |
-| [`@your-scope/dsh-okf-openwiki`](packages/dsh-okf-openwiki/) | Serves OKF/OpenWiki bundle pages as skills **with provenance** — trust tiers (`verified`/`unverified`) surface in metadata, with a `verifiedOnly` trust gate | ✅ |
+| [`@morewax/dsh-prime-harness`](packages/dsh-prime-harness/) | Serves Prime skills into `ctx.skills`, injects Prime memories as durable context (session-reference contract: escaped, budgeted, fail-loud), exports turns to Prime's inbox for refine | ✅ |
+| [`@morewax/dsh-okf-openwiki`](packages/dsh-okf-openwiki/) | Serves OKF/OpenWiki bundle pages as skills **with provenance** — trust tiers (`verified`/`unverified`) surface in metadata, with a `verifiedOnly` trust gate | ✅ |
 | [`prime-harness-testkit`](packages/test-support/prime-harness-testkit/) | Reusable fixtures + suites verifying every contract above (16 tests) | dev only |
 
 ## Install
 
 ```sh
-dsh plugin --profile default add @your-scope/dsh-prime-harness
-dsh plugin --profile default add @your-scope/dsh-okf-openwiki
+dsh plugin --profile default add @morewax/dsh-prime-harness
+dsh plugin --profile default add @morewax/dsh-okf-openwiki
 # or straight from GitHub:
-dsh plugin --profile default add github:<you>/dsh-prime-bridge
+dsh plugin --profile default add github:moreWax/dsh-prime-bridge
 ```
 
 ## Quick start
@@ -39,14 +39,14 @@ dsh plugin --profile default add github:<you>/dsh-prime-bridge
 ```yaml
 # ~/.dsh/profiles/default/cordis.patch.yml
 - id: prime-harness
-  name: '@your-scope/dsh-prime-harness'
+  name: '@morewax/dsh-prime-harness'
   config:
     primeHome: ~/.prime/agent       # any Prime Agent install
     sessionId: <prime-session-uuid> # whose memories to surface
     exportTurns: true               # write turns back for refine
 
 - id: okf-openwiki
-  name: '@your-scope/dsh-okf-openwiki'
+  name: '@morewax/dsh-okf-openwiki'
   config:
     bundles: [/srv/wiki/core]       # one or more OKF bundles
     verifiedOnly: false
