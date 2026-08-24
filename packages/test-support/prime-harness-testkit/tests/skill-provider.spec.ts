@@ -4,7 +4,7 @@
 // test fixtures mount recording service doubles on a real Context; the doubles are
 // intentionally loosely typed at this single boundary.
 import { describe, expect, it } from 'vitest'
-import { registerSkillProvider } from '@deepseek-ai/dsh-prime-harness'
+import { registerSkillProvider } from '@your-scope/dsh-prime-harness'
 import { makePrimeHome, mountPrimeHarnessTestServices } from '../src/fixtures.js'
 
 describe('skill provider wiring (real Context)', () => {

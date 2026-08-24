@@ -12,25 +12,25 @@
     "url": "git+https://github.com/<you>/dsh-prime-bridge.git",
     "directory": "packages/dsh-okf-openwiki"
   },
-  "main": "lib/index.js",
-  "types": "lib/types/index.d.ts",
+  "main": "lib/index.mjs",
+  "types": "lib/types/index.d.mts",
   "exports": {
     ".": {
-      "types": "./lib/types/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./lib/types/index.d.mts",
+      "default": "./lib/index.mjs"
     },
     "./invariant": {
-      "types": "./lib/types/invariant.d.ts",
-      "default": "./lib/invariant.js"
+      "types": "./lib/types/invariant.d.mts",
+      "default": "./lib/invariant.mjs"
     },
     "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
   "files": [
-    "lib/index.js",
-    "lib/invariant.js",
+    "lib/index.mjs",
+    "lib/invariant.mjs",
     "patches/okf-openwiki.patch.yml",
-    "lib/types/**/*.d.ts"
+    "lib/types/**/*.d.mts"
   ],
   "dsh": {
     "bundle": {
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-invariants": "^0.0.1-rc.1",
-    "@deepseek-ai/dsh-skill": "^0.0.1-rc.1"
+    "@deepseek-ai/dsh-skill": "^0.0.1-rc.1",
+    "@your-scope/dsh-prime-bridge-testkit": "workspace:*"
   }
 }

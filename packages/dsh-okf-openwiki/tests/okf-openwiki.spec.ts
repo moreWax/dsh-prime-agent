@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SkillRegistry from '@deepseek-ai/dsh-skill'
-import * as okfOpenwiki from '@deepseek-ai/dsh-okf-openwiki'
+import * as okfOpenwiki from '../src/index.js'
 import { makeOkfBundle } from '@your-scope/dsh-prime-bridge-testkit'
 
 function mount(bundles: string[], extra: Record<string, unknown> = {}) {

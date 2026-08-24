@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { listPrimeSkills, loadHarnessEntries } from '@deepseek-ai/dsh-prime-harness'
+import { listPrimeSkills, loadHarnessEntries } from '@your-scope/dsh-prime-harness'
 import { makePrimeHome } from '../src/fixtures.js'
 
 describe('store readers', () => {
