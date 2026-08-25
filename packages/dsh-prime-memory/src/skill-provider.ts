@@ -12,21 +12,12 @@ import type {
   SkillLookupOptions,
 } from '@deepseek-ai/dsh-skill'
 import { listPrimeSkills } from './store.js'
+import { frontmatterDescription, stripFrontmatter } from './markdown.js'
 
 interface SourceSkill { name: string; path: string }
 
 /** Tolerant sync read used during catalog discovery. */
 const readSync = (p: string): string => readFileSync(p, 'utf8')
-
-/** Parse frontmatter-ish description from a markdown page; tolerant fallback. */
-function describe(body: string): string {
-  const m = body.match(/^---\n([\s\S]*?)\n---/)
-  if (m?.[1]) {
-    const d = m[1].match(/^description:\s*(.+)$/m)
-    if (d?.[1]) return d[1].trim()
-  }
-  return body.split('\n').find(l => l.startsWith('# '))?.replace(/^#\s*/, '') ?? ''
-}
 
 export function registerSkillProvider(
   ctx: Context,
@@ -46,7 +37,7 @@ export function registerSkillProvider(
         try { body = readSync(s.path) } catch { return [] }
         return [{
           name,
-          description: describe(body),
+          description: frontmatterDescription(body),
           locator: s.path,
           path: s.path,
           rank: cfg.rank,
@@ -62,11 +53,11 @@ export function registerSkillProvider(
       try {
         const raw = await readFile(path, 'utf8')
         // strip frontmatter for content
-        const content = raw.replace(/^---\n[\s\S]*?\n---\n?/, '')
+        const content = stripFrontmatter(raw)
         const invocation: SkillInvocationPolicy = { modelInvocable: true, userInvocable: true }
         return {
           name: candidate.name,
-          description: describe(raw),
+          description: frontmatterDescription(raw),
           invocation,
           source: 'custom' as never,
           provider: 'prime-memory',

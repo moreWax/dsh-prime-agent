@@ -68,41 +68,40 @@ function toolSummaries(surface: readonly ExportSurfaceNode[]) {
     }))
 }
 
+/** Owns sequence state and the storage lifecycle for a single session. */
+class TurnExporter {
+  private sequence = 0
+  private readonly inbox: string
+  private readonly file: string
+
+  constructor(private readonly view: ExportContextView, private readonly cfg: PrimeHarnessConfig & { sessionId: string }) {
+    this.inbox = join(primeHome(cfg), 'inbox')
+    this.file = join(this.inbox, `${cfg.sessionId}.jsonl`)
+  }
+
+  async export(): Promise<void> {
+    const surface = this.view.sessions?.get?.()?.surface ?? []
+    const userText = textOf(surface, 'user/message')
+    const assistantText = textOf(surface, 'assistant/message')
+    const toolCalls = toolSummaries(surface)
+    const record: TurnExportRecord = {
+      ts: new Date().toISOString(), sessionId: this.cfg.sessionId, turnSeq: ++this.sequence,
+      ...(userText === undefined ? {} : { userText }),
+      ...(assistantText === undefined ? {} : { assistantText }),
+      ...(toolCalls.length === 0 ? {} : { toolCalls }),
+    }
+    validate(record)
+    if (this.view.storageDomain?.put) return this.view.storageDomain.put(DOMAIN, record)
+    await mkdir(this.inbox, { recursive: true })
+    await appendFile(this.file, JSON.stringify(record) + '\n', 'utf8')
+  }
+}
+
 export function registerTurnExport(ctx: Context, cfg: PrimeHarnessConfig & { sessionId: string }): void {
   if (cfg.exportTurns === false) return
-  const inbox = join(primeHome(cfg), 'inbox')
-  const file = join(inbox, `${cfg.sessionId}.jsonl`)
-  let lastSeq = 0
-
+  const exporter = new TurnExporter(ctx as unknown as ExportContextView, cfg)
   ctx.events.on('agent/turn-stopping', async () => {
-    try {
-      const view = ctx as unknown as ExportContextView
-      const session = view.sessions?.get?.() ?? null
-      const surface: readonly ExportSurfaceNode[] = session?.surface ?? []
-      const base: TurnExportRecord = {
-        ts: new Date().toISOString(),
-        sessionId: cfg.sessionId,
-        turnSeq: ++lastSeq,
-      }
-      const u = textOf(surface, 'user/message')
-      const a = textOf(surface, 'assistant/message')
-      const t = toolSummaries(surface)
-      const record: TurnExportRecord = {
-        ...base,
-        ...(u === undefined ? {} : { userText: u }),
-        ...(a === undefined ? {} : { assistantText: a }),
-        ...(t.length > 0 ? { toolCalls: t } : {}),
-      }
-      validate(record)
-
-      if (view.storageDomain?.put) {
-        await view.storageDomain.put(DOMAIN, record)
-        return
-      }
-      await mkdir(inbox, { recursive: true })
-      await appendFile(file, JSON.stringify(record) + '\n', 'utf8')
-    } catch {
-      /* export must never break the agent loop */
-    }
+    try { await exporter.export() }
+    catch { /* export must never break the agent loop */ }
   })
 }
