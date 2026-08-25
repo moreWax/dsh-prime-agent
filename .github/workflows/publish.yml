@@ -1,19 +1,30 @@
-name: Publish
+name: publish
 on:
   release:
     types: [published]
+
+permissions:
+  contents: read
+  id-token: write   # npm provenance
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions: { contents: read, id-token: write }
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with: { version: 10 }
+        with:
+          version: 11.7.0
       - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: pnpm, registry-url: 'https://registry.npmjs.org' }
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm -r --filter './packages/*' run build
-      - run: pnpm -r --filter './packages/*' publish --access public --no-git-checks
+      - run: pnpm -r run typecheck
+      - run: pnpm test
+      - run: pnpm -r run build
+      # publishes every non-private workspace package (testkit stays private)
+      - run: pnpm -r publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

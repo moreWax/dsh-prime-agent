@@ -9,8 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moreWax/dsh-prime-agent.git",
-    "directory": "packages/dsh-prime-memory"
+    "url": "git+https://github.com/moreWax/dsh-prime-agent.git"
   },
   "main": "lib/index.mjs",
   "types": "lib/types/index.d.mts",
@@ -53,5 +52,11 @@
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "^3.18.0"
-  }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "memory",
+    "prime-agent"
+  ]
 }

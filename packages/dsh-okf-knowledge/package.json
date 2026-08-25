@@ -9,8 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moreWax/dsh-prime-agent.git",
-    "directory": "packages/dsh-okf-knowledge"
+    "url": "git+https://github.com/moreWax/dsh-prime-agent.git"
   },
   "main": "lib/index.mjs",
   "types": "lib/types/index.d.mts",
@@ -50,5 +49,12 @@
     "@deepseek-ai/dsh-invariants": "^0.0.1-rc.1",
     "@deepseek-ai/dsh-skill": "^0.0.1-rc.1",
     "@morewax/dsh-prime-agent-testkit": "workspace:*"
-  }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "knowledge",
+    "okf",
+    "openwiki"
+  ]
 }
