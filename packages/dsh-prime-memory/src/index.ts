@@ -1,5 +1,5 @@
 /**
- * @deepseek-ai/dsh-prime-harness
+ * @deepseek-ai/dsh-prime-memory
  *
  * Bridges Prime Agent's continual harness into DeepSeek Harness, entirely as
  * plugins on native seams:
@@ -14,7 +14,7 @@ import { registerSkillProvider } from './skill-provider.js'
 import { registerContextInjection, registerContextInjectionWith, getRenderedMemory, getInjectionError, PRIME_MEMORY_BUDGET_EXCEEDED } from './context-inject.js'
 import { registerTurnExport } from './export.js'
 
-export const name = 'prime-harness'
+export const name = 'prime-memory'
 export const inject = ['skills'] as const
 export { Config, PRIME_MEMORY_BUDGET_EXCEEDED, getRenderedMemory, getInjectionError }
 export type { PrimeHarnessConfig }

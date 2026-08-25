@@ -1,15 +1,15 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-prime-harness-testkit`.
- * @module @deepseek-ai/dsh-prime-harness-testkit/invariant
+ * Package-owned invariant companion for `@deepseek-ai/dsh-prime-agent-testkit`.
+ * @module @deepseek-ai/dsh-prime-agent-testkit/invariant
  */
 
 /* jscpd:ignore-start */
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-prime-harness-testkit'
+const PACKAGE_NAME = '@deepseek-ai/dsh-prime-agent-testkit'
 
-export const name = 'prime-harness-testkit-invariant'
+export const name = 'prime-agent-testkit-invariant'
 export const inject = ['invariants']
 
 /** Test-only package: no runtime invariants of its own. */

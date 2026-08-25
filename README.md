@@ -1,4 +1,4 @@
-# dsh-prime-bridge
+# dsh-prime-agent
 
 **Make your DeepSeek Harness agents learn.** A closed learning loop connecting
 [Prime Agent](https://github.com/prime-agent)'s continual memory system and an
@@ -7,9 +7,9 @@
 
 ```
 ┌─────────────── dsh session ───────────────┐      ┌────────── Prime Agent ──────────┐
-│ skill catalog ◄── okf-openwiki ───────────┼──────│  skills + OKF bundle pages      │
-│ durable context ◄── prime-harness ────────┼──────│  memories / prompt notes        │
-│ turn transcript ── prime-harness ─────────┼──────► inbox (refine.run)             │
+│ skill catalog ◄── okf-knowledge ───────────┼──────│  skills + OKF bundle pages      │
+│ durable context ◄── prime-memory ────────┼──────│  memories / prompt notes        │
+│ turn transcript ── prime-memory ─────────┼──────► inbox (refine.run)             │
 └───────────────────────────────────────────┘      │        ▲                        │
                                                    │        │ DSPy / MIPROv2         │
                                                    └────────┴── OKF draft pages ─────┘
@@ -21,34 +21,34 @@
 
 | Package | What it does | Works standalone |
 |---|---|---|
-| [`@morewax/dsh-prime-harness`](packages/dsh-prime-harness/) | Serves Prime skills into `ctx.skills`, injects Prime memories as durable context (session-reference contract: escaped, budgeted, fail-loud), exports turns to Prime's inbox for refine | ✅ |
-| [`@morewax/dsh-okf-openwiki`](packages/dsh-okf-openwiki/) | Serves OKF/OpenWiki bundle pages as skills **with provenance** — trust tiers (`verified`/`unverified`) surface in metadata, with a `verifiedOnly` trust gate | ✅ |
-| [`prime-harness-testkit`](packages/test-support/prime-harness-testkit/) | Reusable fixtures + suites verifying every contract above (16 tests) | dev only |
+| [`@morewax/dsh-prime-memory`](packages/dsh-prime-memory/) | Serves Prime skills into `ctx.skills`, injects Prime memories as durable context (session-reference contract: escaped, budgeted, fail-loud), exports turns to Prime's inbox for refine | ✅ |
+| [`@morewax/dsh-okf-knowledge`](packages/dsh-okf-knowledge/) | Serves OKF/OpenWiki bundle pages as skills **with provenance** — trust tiers (`verified`/`unverified`) surface in metadata, with a `verifiedOnly` trust gate | ✅ |
+| [`prime-agent-testkit`](packages/test-support/prime-agent-testkit/) | Reusable fixtures + suites verifying every contract above (16 tests) | dev only |
 
 **New here?** Start with the [5-minute quick start](QUICKSTART.md), then browse the [cookbook](cookbook/).
 
 ## Install
 
 ```sh
-dsh plugin --profile default add @morewax/dsh-prime-harness
-dsh plugin --profile default add @morewax/dsh-okf-openwiki
+dsh plugin --profile default add @morewax/dsh-prime-memory
+dsh plugin --profile default add @morewax/dsh-okf-knowledge
 # or straight from GitHub:
-dsh plugin --profile default add github:moreWax/dsh-prime-bridge
+dsh plugin --profile default add github:moreWax/dsh-prime-agent
 ```
 
 ## Quick start
 
 ```yaml
 # ~/.dsh/profiles/default/cordis.patch.yml
-- id: prime-harness
-  name: '@morewax/dsh-prime-harness'
+- id: prime-memory
+  name: '@morewax/dsh-prime-memory'
   config:
     primeHome: ~/.prime/agent       # any Prime Agent install
     sessionId: <prime-session-uuid> # whose memories to surface
     exportTurns: true               # write turns back for refine
 
-- id: okf-openwiki
-  name: '@morewax/dsh-okf-openwiki'
+- id: okf-knowledge
+  name: '@morewax/dsh-okf-knowledge'
   config:
     bundles: [/srv/wiki/core]       # one or more OKF bundles
     verifiedOnly: false

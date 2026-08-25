@@ -1,9 +1,9 @@
-# @morewax/dsh-prime-bridge-init
+# @morewax/dsh-prime-agent-init
 
 One command to check everything the learning loop needs:
 
 ```sh
-npx @morewax/dsh-prime-bridge init
+npx @morewax/dsh-prime-agent init
 ```
 
 Checks DeepSeek Harness, Prime Agent, an OKF/OpenWiki bundle, and DSPy —

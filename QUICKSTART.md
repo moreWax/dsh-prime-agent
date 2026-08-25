@@ -8,17 +8,17 @@ Everything works without Prime — you just get the knowledge-serving half.
 ## 0 · Don't have everything installed? One command checks:
 
 ```sh
-npx @morewax/dsh-prime-bridge-init init
+npx @morewax/dsh-prime-agent-init init
 # y/n prompts for each missing piece: harness, Prime Agent, wiki bundle, DSPy
 ```
 
 ## 1 · Install the plugins
 
 ```sh
-dsh plugin --profile default add github:moreWax/dsh-prime-bridge
+dsh plugin --profile default add github:moreWax/dsh-prime-agent
 ```
 
-(Installs both bundles — prime-harness and okf-openwiki — into your profile.)
+(Installs both bundles — prime-memory and okf-knowledge — into your profile.)
 
 ## 2 · Point it at your data
 
@@ -62,7 +62,7 @@ You should see `hello-knowledge` (and every other `kind:` page) in the skill men
    ```
 
 3. Memories: if the surfaced Prime session has entries, they ride along in
-   every request inside `<prime-harness-memory>` tags (escaped, budgeted).
+   every request inside `<prime-memory>` tags (escaped, budgeted).
 
 That's the whole loop: knowledge in → sessions out → refine offline → better
 knowledge back.
@@ -73,6 +73,6 @@ knowledge back.
 |---|---|
 | Skill menu empty | `bundles` paths wrong, or pages missing `kind:` frontmatter |
 | No inbox file | `sessionId` unset or `exportTurns: false`; needs one completed turn |
-| Plugin didn't load | `dsh --profile default --dump-config` — look for the `prime-harness` / `okf-openwiki` rows |
+| Plugin didn't load | `dsh --profile default --dump-config` — look for the `prime-memory` / `okf-knowledge` rows |
 
 Next: the [cookbook](cookbook/) goes deeper on each capability.

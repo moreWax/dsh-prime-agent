@@ -4,7 +4,7 @@
 // test fixtures mount recording service doubles on a real Context; the doubles are
 // intentionally loosely typed at this single boundary.
 /**
- * End-to-end smoke: mount the real SkillRegistry + the prime-harness plugin
+ * End-to-end smoke: mount the real SkillRegistry + the prime-memory plugin
  * over synthetic fixtures, then verify the three capabilities behave as
  * documented through their public seams:
  *
@@ -15,10 +15,10 @@
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SkillRegistry from '@deepseek-ai/dsh-skill'
-import { apply as primeHarness, getRenderedMemory } from '@morewax/dsh-prime-harness'
+import { apply as primeHarness, getRenderedMemory } from '@morewax/dsh-prime-memory'
 import { makePrimeHome } from '../src/fixtures.js'
 
-describe('prime-harness smoke (real registry)', () => {
+describe('prime-memory smoke (real registry)', () => {
   it('serves skills, injects memory, and exports turns through public seams', async () => {
     const home = await makePrimeHome()
 
@@ -51,10 +51,10 @@ describe('prime-harness smoke (real registry)', () => {
     await until(() => getRenderedMemory(ctx) !== undefined)
     const rendered = getRenderedMemory(ctx) ?? ''
     expect(rendered).toBeDefined()
-    expect(rendered).toContain('<prime-harness-memory>')
+    expect(rendered).toContain('<prime-memory>')
     expect(rendered).toContain('prefer-concise')
     // framing cannot be forged from memory bodies
-    expect((rendered.match(/<\/prime-harness-memory>/g) ?? []).length).toBe(1)
+    expect((rendered.match(/<\/prime-memory>/g) ?? []).length).toBe(1)
 
     // 3. Turn export: fire turn end; validated record reaches storage
     ctx.events.emit('agent/turn-stopping', {})

@@ -4,8 +4,8 @@
 # DSH_OKF_BUNDLES - colon-separated bundle roots, e.g.
 #   DSH_OKF_BUNDLES=/srv/wiki/core:/srv/wiki/team
 
-- id: okf-openwiki
-  name: '@deepseek-ai/dsh-okf-openwiki'
+- id: okf-knowledge
+  name: '@deepseek-ai/dsh-okf-knowledge'
   config:
     bundles: !!js (process.env.DSH_OKF_BUNDLES || '').split(':').filter(Boolean)
     rank: 550

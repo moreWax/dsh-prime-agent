@@ -1,5 +1,5 @@
 {
-  "name": "@morewax/dsh-prime-bridge-testkit",
+  "name": "@morewax/dsh-prime-agent-testkit",
   "description": "Fixtures and verification suites for the prime bridge plugins",
   "version": "0.1.0",
   "license": "MIT",
@@ -18,8 +18,8 @@
     "@deepseek-ai/dsh-skill": ">=0.1.1-rc.2"
   },
   "dependencies": {
-    "@morewax/dsh-prime-harness": "workspace:*",
-    "@morewax/dsh-okf-openwiki": "workspace:*"
+    "@morewax/dsh-prime-memory": "workspace:*",
+    "@morewax/dsh-okf-knowledge": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",

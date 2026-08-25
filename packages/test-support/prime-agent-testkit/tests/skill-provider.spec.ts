@@ -4,7 +4,7 @@
 // test fixtures mount recording service doubles on a real Context; the doubles are
 // intentionally loosely typed at this single boundary.
 import { describe, expect, it } from 'vitest'
-import { registerSkillProvider } from '@morewax/dsh-prime-harness'
+import { registerSkillProvider } from '@morewax/dsh-prime-memory'
 import { makePrimeHome, mountPrimeHarnessTestServices } from '../src/fixtures.js'
 
 describe('skill provider wiring (real Context)', () => {
@@ -17,7 +17,7 @@ describe('skill provider wiring (real Context)', () => {
     expect(services.providers).toHaveLength(1)
     const provider = services.providers[0] as any
     const listed = await provider.list({})
-    // prime-only now: OKF/OpenWiki serving lives in @deepseek-ai/dsh-okf-openwiki
+    // prime-only now: OKF/OpenWiki serving lives in @deepseek-ai/dsh-okf-knowledge
     const names = listed.map((s: { name: string }) => s.name)
     expect(names).toContain('demo-skill')
     expect(names).not.toContain('okf-routing')

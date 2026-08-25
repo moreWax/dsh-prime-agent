@@ -1,5 +1,5 @@
 {
-  "name": "@morewax/dsh-prime-harness",
+  "name": "@morewax/dsh-prime-memory",
   "description": "Prime Agent bridge for DeepSeek Harness: memory injection, skill serving, and turn export as native plugins",
   "version": "0.1.0",
   "license": "MIT",
@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moreWax/dsh-prime-bridge.git",
-    "directory": "packages/dsh-prime-harness"
+    "url": "git+https://github.com/moreWax/dsh-prime-agent.git",
+    "directory": "packages/dsh-prime-memory"
   },
   "main": "lib/index.mjs",
   "types": "lib/types/index.d.mts",
@@ -29,12 +29,12 @@
   "files": [
     "lib/index.mjs",
     "lib/invariant.mjs",
-    "patches/prime-harness.patch.yml",
+    "patches/prime-memory.patch.yml",
     "lib/types/**/*.d.mts"
   ],
   "dsh": {
     "bundle": {
-      "patch": "./patches/prime-harness.patch.yml"
+      "patch": "./patches/prime-memory.patch.yml"
     }
   },
   "scripts": {

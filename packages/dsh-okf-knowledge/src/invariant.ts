@@ -1,9 +1,9 @@
-/** Package-owned invariant companion. @module @deepseek-ai/dsh-okf-openwiki/invariant */
+/** Package-owned invariant companion. @module @deepseek-ai/dsh-okf-knowledge/invariant */
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-okf-openwiki'
-export const name = 'okf-openwiki-invariant'
+const PACKAGE_NAME = '@deepseek-ai/dsh-okf-knowledge'
+export const name = 'okf-knowledge-invariant'
 export const inject = ['invariants']
 
 /** Contracts live at the ctx.skills seam; no independent event sequence. */

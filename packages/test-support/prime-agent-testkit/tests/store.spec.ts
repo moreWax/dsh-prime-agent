@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { listPrimeSkills, loadHarnessEntries } from '@morewax/dsh-prime-harness'
+import { listPrimeSkills, loadHarnessEntries } from '@morewax/dsh-prime-memory'
 import { makePrimeHome } from '../src/fixtures.js'
 
 describe('store readers', () => {

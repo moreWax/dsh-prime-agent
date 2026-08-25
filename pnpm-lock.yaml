@@ -24,7 +24,7 @@ importers:
         specifier: ^3.0.0
         version: 3.2.7(@types/node@22.20.1)(tsx@4.23.12)
 
-  packages/dsh-okf-openwiki:
+  packages/dsh-okf-knowledge:
     devDependencies:
       '@deepseek-ai/cordis':
         specifier: ^4.0.1
@@ -35,11 +35,11 @@ importers:
       '@deepseek-ai/dsh-skill':
         specifier: ^0.0.1-rc.1
         version: 0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))(@deepseek-ai/dsh-llm@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-attachment@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-brand@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-brand@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))(@deepseek-ai/dsh-timeout@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1))))(@deepseek-ai/dsh-scope@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)(@deepseek-ai/dsh-invariants@0.0.1-rc.1(@deepseek-ai/cordis@4.0.1)))
-      '@morewax/dsh-prime-bridge-testkit':
+      '@morewax/dsh-prime-agent-testkit':
         specifier: workspace:*
-        version: link:../test-support/prime-harness-testkit
+        version: link:../test-support/prime-agent-testkit
 
-  packages/dsh-prime-harness:
+  packages/dsh-prime-memory:
     dependencies:
       '@deepseek-ai/schemastery':
         specifier: ^3.18.0
@@ -57,14 +57,14 @@ importers:
 
   packages/init: {}
 
-  packages/test-support/prime-harness-testkit:
+  packages/test-support/prime-agent-testkit:
     dependencies:
-      '@morewax/dsh-okf-openwiki':
+      '@morewax/dsh-okf-knowledge':
         specifier: workspace:*
-        version: link:../../dsh-okf-openwiki
-      '@morewax/dsh-prime-harness':
+        version: link:../../dsh-okf-knowledge
+      '@morewax/dsh-prime-memory':
         specifier: workspace:*
-        version: link:../../dsh-prime-harness
+        version: link:../../dsh-prime-memory
     devDependencies:
       '@deepseek-ai/cordis':
         specifier: ^4.0.1

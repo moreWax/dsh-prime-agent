@@ -2,10 +2,10 @@
   "files": [],
   "references": [
     {
-      "path": "packages/dsh-prime-harness"
+      "path": "packages/dsh-prime-memory"
     },
     {
-      "path": "packages/dsh-okf-openwiki"
+      "path": "packages/dsh-okf-knowledge"
     }
   ]
 }

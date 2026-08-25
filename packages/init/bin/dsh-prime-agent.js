@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * dsh-prime-bridge init — prerequisite checkup + guided install.
+ * dsh-prime-agent init — prerequisite checkup + guided install.
  *
  * Checks each dependency of the learning loop, offers y/n installation for
  * what's missing, and never runs unless invoked explicitly (CI-safe).
@@ -57,7 +57,7 @@ function python(...args) {
 function scaffoldWiki() {
   const dir = join(homedir(), 'my-wiki', 'skills')
   const page = [
-    '---', 'kind: skill', 'status: verified', 'description: Starter page from dsh-prime-bridge init', '---', '',
+    '---', 'kind: skill', 'status: verified', 'description: Starter page from dsh-prime-agent init', '---', '',
     '# Hello knowledge', 'Edit this page or add more — every kind-declaring page becomes an agent skill.', '',
   ].join('\n')
   mkdirSync(dir, { recursive: true })
@@ -70,7 +70,7 @@ async function ask(rl, q) {
 }
 
 async function main() {
-  console.log('dsh-prime-bridge init — checking your setup\n')
+  console.log('dsh-prime-agent init — checking your setup\n')
   const rl = createInterface({ input: process.stdin, output: process.stdout })
   let missing = []
 
@@ -110,7 +110,7 @@ async function main() {
   }
 
   rl.close()
-  console.log('\ndone. re-run `npx @morewax/dsh-prime-bridge init` any time to re-check.')
+  console.log('\ndone. re-run `npx @morewax/dsh-prime-agent init` any time to re-check.')
 }
 
 main()

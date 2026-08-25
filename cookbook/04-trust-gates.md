@@ -24,8 +24,8 @@ servable by default, but visibly marked.
 Personal profile — see everything, unverified marked:
 
 ```yaml
-- id: okf-openwiki
-  name: '@morewax/dsh-okf-openwiki'
+- id: okf-knowledge
+  name: '@morewax/dsh-okf-knowledge'
   config:
     bundles: [/srv/wiki/team]
 ```
@@ -33,8 +33,8 @@ Personal profile — see everything, unverified marked:
 Production/CI agent — verified only:
 
 ```yaml
-- id: okf-openwiki
-  name: '@morewax/dsh-okf-openwiki'
+- id: okf-knowledge
+  name: '@morewax/dsh-okf-knowledge'
   config:
     bundles: [/srv/wiki/team]
     verifiedOnly: true       # unverified pages vanish from the catalog entirely

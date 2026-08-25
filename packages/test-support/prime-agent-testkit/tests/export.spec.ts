@@ -3,7 +3,7 @@ import type { Context } from '@deepseek-ai/cordis'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { registerTurnExport } from '@morewax/dsh-prime-harness'
+import { registerTurnExport } from '@morewax/dsh-prime-memory'
 import { makePrimeHome, mountPrimeHarnessTestServices } from '../src/fixtures.js'
 
 async function waitFor(check: () => boolean, ms = 1000): Promise<void> {

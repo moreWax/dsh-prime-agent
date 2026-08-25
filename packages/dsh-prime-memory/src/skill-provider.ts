@@ -1,6 +1,6 @@
 /**
  * ctx.skills provider serving Prime Agent skills into dsh's model-facing
- * skill catalog. (OKF/OpenWiki pages are served by @morewax/dsh-okf-openwiki.)
+ * skill catalog. (OKF/OpenWiki pages are served by @morewax/dsh-okf-knowledge.)
  */
 import { readFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
@@ -33,7 +33,7 @@ export function registerSkillProvider(
   cfg: { rank: number; primeHome?: string },
 ): void {
   ctx.skills.registerProvider(() => ({
-    name: 'prime-harness',
+    name: 'prime-memory',
     async list(options: SkillLookupOptions): Promise<readonly SkillCandidate[]> {
       void options
       const found: SourceSkill[] = await listPrimeSkills(cfg)
@@ -51,7 +51,7 @@ export function registerSkillProvider(
           path: s.path,
           rank: cfg.rank,
           source: 'custom',
-          provider: 'prime-harness',
+          provider: 'prime-memory',
           invocation: { modelInvocable: true, userInvocable: true },
         }]
       })
@@ -69,7 +69,7 @@ export function registerSkillProvider(
           description: describe(raw),
           invocation,
           source: 'custom' as never,
-          provider: 'prime-harness',
+          provider: 'prime-memory',
           content,
           path,
         }

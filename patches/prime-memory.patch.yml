@@ -1,4 +1,4 @@
-# The prime-harness bundle patch. Inserted after the mode bundles, so the
+# The prime-memory bundle patch. Inserted after the mode bundles, so the
 # skill service this package's provider registers on already exists.
 #
 # Environment seams (all optional):
@@ -8,8 +8,8 @@
 #                             required for memory injection and turn export
 
 - insert:
-    - id: prime-harness
-      name: '@deepseek-ai/dsh-prime-harness'
+    - id: prime-memory
+      name: '@deepseek-ai/dsh-prime-memory'
       config:
         primeHome: !!js process.env.PRIME_HOME || ''
         okfBundle: !!js process.env.DSH_PRIME_OKF_BUNDLE || ''

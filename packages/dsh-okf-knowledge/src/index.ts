@@ -8,9 +8,9 @@
  * can gate on trust without parsing bodies.
  *
  * This package owns NO prime-agent concerns: pure knowledge serving.
- * Pair it with @deepseek-ai/dsh-prime-harness if you also want prime memory
+ * Pair it with @deepseek-ai/dsh-prime-memory if you also want prime memory
  * injection and turn export.
- * @module @deepseek-ai/dsh-okf-openwiki
+ * @module @deepseek-ai/dsh-okf-knowledge
  */
 import { readFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
@@ -83,7 +83,7 @@ async function collectPages(root: string): Promise<WikiPage[]> {
 
 import { readdir } from 'node:fs/promises'
 
-export const name = 'okf-openwiki'
+export const name = 'okf-knowledge'
 export const inject = ['skills'] as const
 
 export function apply(ctx: Context, config: Config): void {
@@ -91,7 +91,7 @@ export function apply(ctx: Context, config: Config): void {
   const verifiedOnly = config.verifiedOnly ?? false
 
   ctx.skills.registerProvider(() => ({
-    name: 'okf-openwiki',
+    name: 'okf-knowledge',
     async list() {
       const seen = new Set<string>()
       const candidates: SkillCandidate[] = []
@@ -107,7 +107,7 @@ export function apply(ctx: Context, config: Config): void {
             path: page.path,
             rank,
             source: 'custom',
-            provider: 'okf-openwiki',
+            provider: 'okf-knowledge',
             invocation: { modelInvocable: true, userInvocable: true },
           })
         }
@@ -126,7 +126,7 @@ export function apply(ctx: Context, config: Config): void {
         content: body,
         invocation: { modelInvocable: true, userInvocable: true },
         source: 'custom',
-        provider: 'okf-openwiki',
+        provider: 'okf-knowledge',
         metadata: {
           okfKind: meta.kind,
           okfStatus: meta.status ?? 'unverified',

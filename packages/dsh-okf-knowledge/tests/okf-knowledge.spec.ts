@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SkillRegistry from '@deepseek-ai/dsh-skill'
 import * as okfOpenwiki from '../src/index.js'
-import { makeOkfBundle } from '@morewax/dsh-prime-bridge-testkit'
+import { makeOkfBundle } from '@morewax/dsh-prime-agent-testkit'
 
 function mount(bundles: string[], extra: Record<string, unknown> = {}) {
   const ctx = new Context()
@@ -25,7 +25,7 @@ function mount(bundles: string[], extra: Record<string, unknown> = {}) {
   return { ctx, provider: provider as Provider }
 }
 
-describe('okf-openwiki knowledge plugin', () => {
+describe('okf-knowledge knowledge plugin', () => {
   it('serves bundle pages with provenance through the real registry', async () => {
     const bundle = await makeOkfBundle()
     const { ctx } = mount([bundle.root])

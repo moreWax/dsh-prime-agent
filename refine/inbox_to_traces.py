@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Convert prime-harness turn-export JSONL into DSPy routing examples.
+"""Convert prime-memory turn-export JSONL into DSPy routing examples.
 
-Reads one or more inbox files produced by @morewax/dsh-prime-harness and emits
+Reads one or more inbox files produced by @morewax/dsh-prime-memory and emits
 JSONL of {"task": ..., "skill": ...} pairs suitable for dspy.Example construction.
 
 Usage:

@@ -1,6 +1,6 @@
 import z from '@deepseek-ai/schemastery'
 
-/** Config for every plugin in the prime-harness family. */
+/** Config for every plugin in the prime-memory family. */
 export interface PrimeHarnessConfig {
   primeHome?: string
   rank?: number
@@ -18,7 +18,7 @@ export const Config = z.object({
   serveSkills: z.boolean().default(true),
   injectMemory: z.boolean().default(true),
   exportTurns: z.boolean().default(true),
-}).description('prime-harness bridge configuration')
+}).description('prime-memory bridge configuration')
 
 export function normalize(raw: Partial<PrimeHarnessConfig> = {}): Required<PrimeHarnessConfig> {
   return {

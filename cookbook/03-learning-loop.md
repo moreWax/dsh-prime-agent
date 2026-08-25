@@ -18,8 +18,8 @@ Step 1 is this plugin. Steps 2–4 ship in this repo's [`refine/`](../refine/) p
 ## Enable export
 
 ```yaml
-- id: prime-harness
-  name: '@morewax/dsh-prime-harness'
+- id: prime-memory
+  name: '@morewax/dsh-prime-memory'
   config:
     sessionId: <uuid>
     exportTurns: true

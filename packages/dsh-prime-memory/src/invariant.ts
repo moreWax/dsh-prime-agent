@@ -1,23 +1,23 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-prime-harness`.
- * @module @deepseek-ai/dsh-prime-harness/invariant
+ * Package-owned invariant companion for `@deepseek-ai/dsh-prime-memory`.
+ * @module @deepseek-ai/dsh-prime-memory/invariant
  */
 
 /* jscpd:ignore-start */
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
 
-const PACKAGE_NAME = '@deepseek-ai/dsh-prime-harness'
+const PACKAGE_NAME = '@deepseek-ai/dsh-prime-memory'
 
 /** Cordis companion plugin name. */
-export const name = 'prime-harness-invariant'
+export const name = 'prime-memory-invariant'
 /** Service required before the companion can reserve package ownership. */
 export const inject = ['invariants']
 
 /**
  * No runtime invariant: this package owns no independent event sequence or mutable data
  * relation beyond contracts enforced at its owning seams (skills registry, session log,
- * storage domain) and verified by the prime-harness-testkit suites.
+ * storage domain) and verified by the prime-agent-testkit suites.
  */
 const install: InvariantInstaller = () => {}
 

@@ -1,5 +1,5 @@
 {
-  "name": "dsh-prime-bridge",
+  "name": "dsh-prime-agent",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,7 +9,7 @@
     "build": "tsdown --config tsdown.config.ts",
     "test": "vitest run",
     "typecheck": "tsc -b",
-    "postinstall": "node -e \"console.log('  dsh-prime-bridge installed. Run: npx dsh-prime-bridge init   (checks harness, prime agent, wiki bundle, DSPy)')\""
+    "postinstall": "node -e \"console.log('  dsh-prime-agent installed. Run: npx dsh-prime-agent init   (checks harness, prime agent, wiki bundle, DSPy)')\""
   },
   "devDependencies": {
     "typescript": "^5.6.0",
@@ -19,6 +19,6 @@
     "@types/node": "^22"
   },
   "bin": {
-    "dsh-prime-bridge": "packages/init/bin/dsh-prime-bridge.js"
+    "dsh-prime-agent": "packages/init/bin/dsh-prime-agent.js"
   }
 }
