@@ -1,0 +1,6 @@
+- insert:
+    - id: okf-knowledge
+      name: '@morewax/dsh-okf-knowledge'
+      config:
+        bundles: []
+        verifiedOnly: true

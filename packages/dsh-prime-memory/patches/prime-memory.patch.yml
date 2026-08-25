@@ -1,0 +1,8 @@
+- insert:
+    - id: prime-memory
+      name: '@morewax/dsh-prime-memory'
+      config:
+        primeHome: ''
+        serveSkills: true
+        injectMemory: true
+        exportTurns: true

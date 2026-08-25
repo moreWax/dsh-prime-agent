@@ -6,7 +6,7 @@
     "node": "^22.19.0 || >=24.0.0"
   },
   "scripts": {
-    "build": "tsdown --config tsdown.config.ts",
+    "build": "pnpm --filter @morewax/dsh-prime-memory run build && pnpm --filter @morewax/dsh-okf-knowledge run build",
     "test": "vitest run",
     "typecheck": "tsc -b",
     "postinstall": "node -e \"console.log('  dsh-prime-agent installed. Run: npx dsh-prime-agent init   (checks harness, prime agent, wiki bundle, DSPy)')\""

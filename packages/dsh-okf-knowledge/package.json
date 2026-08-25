@@ -12,14 +12,14 @@
     "url": "git+https://github.com/moreWax/dsh-prime-agent.git"
   },
   "main": "lib/index.mjs",
-  "types": "lib/types/index.d.mts",
+  "types": "lib/index.d.mts",
   "exports": {
     ".": {
-      "types": "./lib/types/index.d.mts",
+      "types": "./lib/index.d.mts",
       "default": "./lib/index.mjs"
     },
     "./invariant": {
-      "types": "./lib/types/invariant.d.mts",
+      "types": "./lib/invariant.d.mts",
       "default": "./lib/invariant.mjs"
     },
     "./src/*": "./src/*",
@@ -29,7 +29,8 @@
     "lib/index.mjs",
     "lib/invariant.mjs",
     "patches/okf-knowledge.patch.yml",
-    "lib/types/**/*.d.mts"
+    "lib/*.d.mts",
+    "lib/*.d.mts.map"
   ],
   "dsh": {
     "bundle": {
