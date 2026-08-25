@@ -56,5 +56,8 @@
     "knowledge",
     "okf",
     "openwiki"
-  ]
+  ],
+  "engines": {
+    "node": ">=22"
+  }
 }

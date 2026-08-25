@@ -22,5 +22,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/moreWax/dsh-prime-agent.git"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

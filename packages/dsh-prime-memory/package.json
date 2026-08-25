@@ -58,5 +58,8 @@
     "dsh-plugin",
     "memory",
     "prime-agent"
-  ]
+  ],
+  "engines": {
+    "node": ">=22"
+  }
 }
